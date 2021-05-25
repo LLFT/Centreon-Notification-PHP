@@ -12,7 +12,7 @@ _ Server PHP 7 or older installed on your Poller
 
 ### On your Server 
 * Copy the script to __/usr/lib64/nagios/plugins/mail/__
-* Edit the script __/usr/lib64/nagios/plugins/mail/notify-by-email-php.php__ for complete the $url and $from parameters
+* Edit the script __/usr/lib64/nagios/plugins/mail/notify-by-email-php.php__ for complete the __$url__ and __$from__ parameters
 * __Make the file executable__
 
 ### On Centreon 
