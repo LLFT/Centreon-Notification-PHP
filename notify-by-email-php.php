@@ -20,8 +20,8 @@
 	}
 		
 //htmlentities()
-    $url = "https://centreon-prim.stas.ad";
-    $from = "centreon-farm@stas.ad";
+    $url = "https://YOUR URL CENTREON";
+    $from = "YOUR MAIL SENDER";
 	$notifType = $_GET['NOTIFICATIONTYPE'];
 	$hostName = $_GET['HOSTNAME'];
 	$hostAlias = $_GET['HOSTALIAS'];
