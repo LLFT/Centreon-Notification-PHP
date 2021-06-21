@@ -4,7 +4,7 @@
 ###
 ### Version  Date      Author    Description
 ###----------------------------------------------
-### 1.01      21/06/21  LLFT   1.0 stable release
+### 1.02      21/06/21  LLFT   1.0 stable release
 ### Macro-List : https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/macrolist.html
 ### Command Notification :
 ### $USER1$/mail/notify-by-email-php.php "NOTIFICATIONTYPE=$NOTIFICATIONTYPE$" "HOSTNAME=$HOSTNAME$" "HOSTALIAS=$HOSTALIAS$" "HOSTADDRESS=$HOSTADDRESS$" "HOSTDURATION=$HOSTDURATION$" "HOSTID=$HOSTID$" "HOSTSTATE=$HOSTSTATE$" "HOSTOUTPUT=$HOSTOUTPUT$" "LASTHOSTCHECK=$LASTHOSTCHECK$" "LASTHOSTSTATECHANGE=$LASTHOSTSTATECHANGE$" "LASTSERVICECHECK=$LASTSERVICECHECK$" "LASTSERVICESTATECHANGE=$LASTSERVICESTATECHANGE$" "LONGDATETIME=$LONGDATETIME$" "NOTIFICATIONAUTHOR=$NOTIFICATIONAUTHOR$" "NOTIFICATIONCOMMENT=$NOTIFICATIONCOMMENT$" "SERVICEDESC=$SERVICEDESC$" "SERVICEID=$SERVICEID$" "SERVICEOUTPUT=$SERVICEOUTPUT$" "SERVICESTATE=$SERVICESTATE$" "SERVICEDURATION=$SERVICEDURATION$" "NOTIFICATIONNUMBER=$NOTIFICATIONNUMBER$" "CONTACTEMAIL=$CONTACTEMAIL$"
@@ -95,9 +95,9 @@
     }
 
     $subject = "[CENTREON] $notifType $hostName [$hostState]";
-    $body='<html>\r\n';
-    $body='<head><meta charset="UTF-8"><meta http-equiv="Content-type" content="text/html; charset=UTF-8"></head>\r\n';
-    $body='<body>\r\n';
+    $body='<html>';
+    $body.="<head><meta charset='UTF-8'><meta http-equiv='Content-type' content='text/html; charset=UTF-8'></head>\r\n";
+    $body.="<body>\r\n";
     $body.="<table border=0 width='98%' cellpadding=0 cellspacing=0>\r\n";
     $body.="<tr><td valign='top'>\r\n";
     $body.="<table border=0 cellpadding=0 cellspacing=0 width='98%'>\r\n";
@@ -142,7 +142,7 @@
     $body.="</body></html>\r\n";
 
     $headers = "From: $from\r\n";
-    $headers = $headers."Content-type: text/html\r\n";
+    $headers = $headers."Content-type: text/html; charset=UTF-8\r\n";
     /* Send eMail Now... */
     mail($contactEmail, $subject, $body, $headers);
 
